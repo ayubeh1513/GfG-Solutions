@@ -1,31 +1,51 @@
-import java.util.*;
+// User function Template for Java
+// User function Template for Java
 
-public class maxAndMin {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for(int i=0; i<n; i++){
-            arr[i]=sc.nextInt();
-        }
-        maxMin(arr);
-        sc.close();
+/*
+class Pair<K, V> {
+    private final K key;
+    private final V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
     }
 
-    public static void maxMin(int[] arr){
+    public K getKey() {
+        return key;
+    }
+
+    public V getValue() {
+        return value;
+    }
+}
+
+Java users need to return result in Pair class
+For Example -> return new Pair(minimum,maximum)
+*/
+
+class Solution {
+    public Pair<Integer, Integer> getMinMax(int[] arr) {
+        // Code Here
+        if(arr.length == 1){
+            return new Pair<>(arr[0], arr[0]);
+        }
+        
         int a=arr[0];
         int b=arr[0];
-
+        
         for(int i=1; i<arr.length; i++){
             if(arr[i]<a){
                 a=arr[i];
             }
-
+        }
+        
+        for(int i=1; i<arr.length; i++){
             if(arr[i]>b){
                 b=arr[i];
             }
         }
-
-        System.out.println(a+" "+b);
+        
+        return new Pair<>(a, b);
     }
 }
