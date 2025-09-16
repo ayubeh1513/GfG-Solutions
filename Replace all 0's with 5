@@ -1,0 +1,18 @@
+class Solution {
+    int convertfive(int num) {
+        int sum = 0;
+        int place = 1;
+        if(num == 0) return 5;
+        while(num > 0){
+            int ld = num % 10;
+            if(ld == 0){
+                ld = 5;
+            }
+            
+            sum = ld * place + sum;
+            place = place * 10;
+            num = num / 10;
+        }
+        return sum;
+    }
+}
