@@ -1,0 +1,29 @@
+class Solution {
+    public void sort012(int[] arr) {
+        // code here
+        int z= 0;
+        int o = 0;
+        int t = 0;
+        for (int i : arr){
+            if(i==0){
+                z++;
+            } else if (i==1){
+                o++;
+            } else {
+                t++;
+            }
+        }
+        
+        for(int i=0; i<z; i++){
+            arr[i]=0;
+        }
+        
+        for(int i=z; i<z+o; i++){
+            arr[i]=1;
+        }
+        
+        for(int i=z+o; i<z+o+t; i++){
+            arr[i]=2;
+        }
+    }
+}
