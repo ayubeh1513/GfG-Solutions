@@ -1,0 +1,19 @@
+class Solution {
+    public int[] countOddEven(int[] arr) {
+        // Code here
+        int e=0;
+        int o=0;
+        for(int i: arr){
+            if(i%2==0){
+                e++;
+            }else{
+                o++;
+            }
+        }
+        int[] r = new int[2];
+        r[0] = o;
+        r[1] = e;
+        
+        return r;
+    }
+}
